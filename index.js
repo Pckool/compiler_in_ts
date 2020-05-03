@@ -60,6 +60,7 @@ var Interpreter;
     var _stack = [];
     var _symbols = {};
     function readln() {
+        console.log(process.argv);
         process.stdin.resume();
         process.stdin.setEncoding('utf8');
         process.stdin.on('data', function (data) {

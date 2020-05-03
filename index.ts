@@ -114,6 +114,7 @@ namespace Interpreter{
 		// 	}
 
 		// });
+		console.log(process.argv);
 		process.stdin.resume();
 		process.stdin.setEncoding('utf8');
 		process.stdin.on('data', function (data:string) {
