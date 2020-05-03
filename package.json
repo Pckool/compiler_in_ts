@@ -1,0 +1,27 @@
+{
+  "name": "compilers_final",
+  "version": "1.0.0",
+  "description": "The final project for the compilers class",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js --dev",
+    "build": "tsc ",
+    "dev": "tsc --watch",
+    "start": "node index.js",
+    "test-dev": "tsc && node index.js --dev < type ./test1.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pckool/cmdln-interpreter.git"
+  },
+  "author": "Philippe Clesca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pckool/cmdln-interpreter/issues"
+  },
+  "homepage": "https://github.com/Pckool/cmdln-interpreter#readme",
+  "dependencies": {
+    "@types/node": "^13.9.3",
+    "lodash": "^4.17.15"
+  }
+}
