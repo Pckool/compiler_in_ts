@@ -291,7 +291,9 @@ namespace Interpreter{
 	}
 	function parseVariableDecls(line: string) {
 		if (_VARDECL.test(line)) {
-			parseNewVar(line.match(_VARDECL));
+			var vars = line.match(_VARDECL);
+			logDev(vars.length + ' variables were defined...');
+			parseNewVar(vars);
 		}
 		else{
 			logDev('No variables were defined...');
@@ -302,6 +304,9 @@ namespace Interpreter{
 	}
 	function parseStmts(line: string){
 		if (_PRINT.test(line) || _ASSIGN.test(line)) {
+			var vars = [...line.match(_PRINT), ...line.match(_ASSIGN)];
+
+			logDev(vars.length + ' statements were defined...');
 			parseNewStmnt(line.match(_VARDECL));
 		}
 		else {
