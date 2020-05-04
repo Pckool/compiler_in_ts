@@ -245,13 +245,13 @@ namespace Interpreter{
 	function parseMain(main: string[]){
 		// at this point the passed string does not have any spaces, new lines, or tabs and each thing was separated by a space.
 		if (_KEYS.test(main[main.length - 1]) && main[main.length - 1] === 'end'){
-			logDev('Found end...');
+			logDev(`Found ${main[main.length - 1].match(_KEYS)}...`);
 		}
 		if (_KEYS.test(main[1]) && main[1] === 'main') {
-			logDev('Found main...');
+			logDev(`Found ${main[1].match(_KEYS)}...`);
 		}
 		if (_KEYS.test(main[0]) && main[0] === 'def') {
-			logDev('Found def...');
+			logDev(`Found ${main[0].match(_KEYS)}...`);
 		}
 		if (_KEYS.test(main[0]) && main[0] === 'def' && _KEYS.test(main[1]) && main[1] === 'main' && _KEYS.test(main[main.length-1]) && main[main.length-1] === 'end'){
 			// Valid main declairation
