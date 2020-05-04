@@ -188,6 +188,7 @@ var Interpreter;
             logDev("Found " + main[0].match(_KEYS) + "...");
         }
         if (_KEYS.test(main[0]) && main[0] === 'def' && _KEYS.test(main[1]) && main[1] === 'main' && _KEYS.test(main[main.length - 1]) && main[main.length - 1] === 'end') {
+            logDev('Valid main... parsing...');
             parseVariableDecls(main.slice(3, main.length).join(' '));
             parseStmts(main.slice(3, main.length).join(' '));
         }
