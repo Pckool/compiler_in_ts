@@ -237,7 +237,7 @@ var Interpreter;
         }
     }
     function logDev(str) {
-        if (process.argv[1] === '--dev') {
+        if (process.argv[2] === '--dev') {
             console.log(str);
         }
     }

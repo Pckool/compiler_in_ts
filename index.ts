@@ -312,7 +312,7 @@ namespace Interpreter{
 
 	}
 	function logDev(str:string){
-		if(process.argv[1] === '--dev'){
+		if(process.argv[2] === '--dev'){
 			console.log(str);
 		}
 		
