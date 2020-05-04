@@ -173,12 +173,20 @@ var Interpreter;
         }
     }
     function getProgram(program) {
-        console.log(program);
         logDev(program);
         var main = program.replace('\n', ' ').replace('\t', '').split(' ');
         var stack = parseMain(main);
     }
     function parseMain(main) {
+        if (_KEYS.test(main[main.length - 1]) && main[main.length - 1] === 'end') {
+            logDev('Found end...');
+        }
+        if (_KEYS.test(main[1]) && main[1] === 'main') {
+            logDev('Found main...');
+        }
+        if (_KEYS.test(main[0]) && main[0] === 'def') {
+            logDev('Found def...');
+        }
         if (_KEYS.test(main[0]) && main[0] === 'def' && _KEYS.test(main[1]) && main[1] === 'main' && _KEYS.test(main[main.length - 1]) && main[main.length - 1] === 'end') {
             parseVariableDecls(main.slice(3, main.length).join(' '));
             parseStmts(main.slice(3, main.length).join(' '));

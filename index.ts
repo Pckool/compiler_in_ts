@@ -237,7 +237,6 @@ namespace Interpreter{
 		}
 	}
 	function getProgram(program: string) {
-		console.log(program);
 		logDev(program);
 		let main = program.replace('\n', ' ').replace('\t', '').split(' ');
 		let stack = parseMain(main);
@@ -245,6 +244,15 @@ namespace Interpreter{
 	}
 	function parseMain(main: string[]){
 		// at this point the passed string does not have any spaces, new lines, or tabs and each thing was separated by a space.
+		if (_KEYS.test(main[main.length - 1]) && main[main.length - 1] === 'end'){
+			logDev('Found end...');
+		}
+		if (_KEYS.test(main[1]) && main[1] === 'main') {
+			logDev('Found main...');
+		}
+		if (_KEYS.test(main[0]) && main[0] === 'def') {
+			logDev('Found def...');
+		}
 		if (_KEYS.test(main[0]) && main[0] === 'def' && _KEYS.test(main[1]) && main[1] === 'main' && _KEYS.test(main[main.length-1]) && main[main.length-1] === 'end'){
 			// Valid main declairation
 			parseVariableDecls(main.slice(3, main.length).join(' '));
