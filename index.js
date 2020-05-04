@@ -65,7 +65,6 @@ var Interpreter;
         process.stdin.setEncoding('utf8');
         process.stdin.on('data', function (data) {
             getProgram(data);
-            process.stdout.write(data);
         });
     }
     function clearStack() {

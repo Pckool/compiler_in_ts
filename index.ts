@@ -83,43 +83,13 @@ namespace Interpreter{
 	}
 
 	function readln() {
-		// const rl = readline.createInterface({
-		// 	input: process.stdin,
-		// 	output: process.stdout
-		// });
-
-		// rl.question('>> ', (answer: string) => {
-		// 	try {
-		// 		rl.close();
-		// 		if (!lineToStack(answer)) {
-		// 			processStack(_stack);
-		// 		}
-		// 		else {
-		// 			// there was some kind of error
-		// 			logError(1);
-		// 		}
-		// 		if (answer.length === 1) {
-		// 			if (_ID.test(answer)) {
-		// 				console.log(getId(answer));
-		// 			}
-
-		// 		}
-
-		// 		clearStack();
-		// 		// console.log(_symbols);
-		// 		readln();
-		// 	}
-		// 	catch (e) {
-		// 		logError(2);
-		// 	}
-
-		// });
+		
 		console.log(process.argv);
 		process.stdin.resume();
 		process.stdin.setEncoding('utf8');
 		process.stdin.on('data', function (data:string) {
 			getProgram(data);
-			process.stdout.write(data);
+			// process.stdout.write(data);
 		});
 	}
 	function clearStack() {
