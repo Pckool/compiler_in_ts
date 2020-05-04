@@ -237,7 +237,8 @@ namespace Interpreter{
 		}
 	}
 	function getProgram(program: string) {
-
+		console.log(program);
+		logDev(program);
 		let main = program.replace('\n', ' ').replace('\t', '').split(' ');
 		let stack = parseMain(main);
 		// processStack(stack);

@@ -173,6 +173,8 @@ var Interpreter;
         }
     }
     function getProgram(program) {
+        console.log(program);
+        logDev(program);
         var main = program.replace('\n', ' ').replace('\t', '').split(' ');
         var stack = parseMain(main);
     }
