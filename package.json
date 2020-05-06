@@ -4,11 +4,11 @@
   "description": "The final project for the compilers class",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js --dev",
+    "test": "node comp.js --dev",
     "build": "tsc ",
     "dev": "tsc --watch",
-    "start": "node index.js",
-    "test-dev": "cat ./test1.txt | node index.js --dev"
+    "start": "node comp.js",
+    "test-dev": "cat ./test1.txt | node comp.js --dev"
   },
   "repository": {
     "type": "git",
